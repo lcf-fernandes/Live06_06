@@ -174,7 +174,7 @@ borderRadius: "10px",
     // Se passou na validação
     setMensagemErro("");
     console.log("Login realizado com sucesso!");
-  };]
+  }]
  , trigger: 'on press'
 }})],            childrenItems:[(...args:any) => <Elements.Text pass={{
           arrProps: [
