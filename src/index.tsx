@@ -74,7 +74,11 @@ width: "100%"
 
           path: [`sc.scA0.form.userName`],
 
-          funcsArray: [() => {}],
+          funcsArray: [async (...args) =>
+        functions.setVar({ args, pass:{
+          keyPath: [`sc.scA0.form.userName`],
+          value: [`$arg_callback`]
+        }})],
 
           args,
         }}/>],
