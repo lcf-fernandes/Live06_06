@@ -178,8 +178,9 @@ borderRadius: "10px",
 
 return (
     <View style={styles.container}>
-      {mensagemErro !== "" && <Text style={color: "red"}>{mensagemErro}</Text>}
-);
+      {mensagemErro !== "" && <Text style={styles.erro}>{mensagemErro}</Text>}
+    </View>
+  );
 }]
  , trigger: 'on press'
 }})],            childrenItems:[(...args:any) => <Elements.Text pass={{
