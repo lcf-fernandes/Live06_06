@@ -46,6 +46,7 @@
             styles:[`{
 width: "100%",
 aligntItems: "center",
+justifyContent: "center",
 }`],
 
             functions:[()=>{}],            childrenItems:[
