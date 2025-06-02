@@ -132,7 +132,7 @@ fontSize: "12px",
 
           funcsArray: [async (...args) =>
         functions.setVar({ args, pass:{
-          keyPath: [`sc.scA0.form.userName`],
+          keyPath: [`sc.scA0.form.userPassword`],
           value: [`$arg_callback`]
         }})],
 
