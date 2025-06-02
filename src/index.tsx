@@ -160,7 +160,7 @@ borderRadius: "10px",
 
             functions:[async (...args) =>
  functions.funcGroup({ args, pass:{
- arrFunctions: [()=> {
+ arrFunctions: [() => {
 const [sc, setSc] = useState({
     scA0: {
       form: {
