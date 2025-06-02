@@ -174,6 +174,14 @@ const validateLogin = (sc) => {
 
   return 'OK';  // Se ambos os campos estiverem preenchidos corretamente.
 }
+
+const result = validateLogin(sc);
+if (result !== 'OK') {
+  console.log(result);  // Exibe o erro correspondente
+} else {
+  console.log('Login válido, pode prosseguir!');
+}
+
 }
 ]
  , trigger: 'on press'
