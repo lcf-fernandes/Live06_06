@@ -160,7 +160,8 @@ borderRadius: "10px",
 
             functions:[async (...args) =>
  functions.funcGroup({ args, pass:{
- arrFunctions: [const validateLogin = (sc) => {
+ arrFunctions: [() => {
+const validateLogin = (sc) => {
   const { userName, userPassword } = sc.scA0.form;
 
   if (!userName || userName.trim() === '') {
@@ -172,7 +173,8 @@ borderRadius: "10px",
   }
 
   return 'OK';  // Se ambos os campos estiverem preenchidos corretamente.
-};
+}
+}
 ]
  , trigger: 'on press'
 }})],            childrenItems:[(...args:any) => <Elements.Text pass={{
