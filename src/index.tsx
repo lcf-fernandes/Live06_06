@@ -47,7 +47,7 @@
             styles:[`{
 aligntItems: "center",
 justifyContent: "center",
-padding: "10px",
+padding: "5px",
 }`],
 
             functions:[()=>{}],            childrenItems:[
@@ -99,7 +99,7 @@ fontSize: "12px",
             styles:[`{
 aligntItems: "center",
 justifyContent: "center",
-padding: "10px",
+padding: "5px",
 }`],
 
             functions:[()=>{}],            childrenItems:[
