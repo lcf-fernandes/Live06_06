@@ -161,7 +161,7 @@ borderRadius: "10px",
             functions:[async (...args) =>
  functions.funcGroup({ args, pass:{
  arrFunctions: [() => {
-const validateLogin = (sc) => {
+const validateLogin = () => {
   const { userName, userPassword } = sc.scA0.form;
 
   if (!userName || userName.trim() === '') {
@@ -175,7 +175,7 @@ const validateLogin = (sc) => {
   return 'OK';  // Se ambos os campos estiverem preenchidos corretamente.
 }
 
-const result = validateLogin(sc);
+const result = validateLogin();
 if (result !== 'OK') {
   console.log(result);  // Exibe o erro correspondente
 } else {
