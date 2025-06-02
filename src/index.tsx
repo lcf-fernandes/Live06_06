@@ -54,7 +54,10 @@ width: "100%"
           ],
 
           arrStyles: [
-            { color: 'black', fontSize: 12, }
+            `{
+color: "#EEE",
+fontSize: "16px",
+}`
           ],
 
           children: [
