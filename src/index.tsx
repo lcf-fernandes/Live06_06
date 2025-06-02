@@ -161,11 +161,6 @@ borderRadius: "10px",
             functions:[async (...args) =>
  functions.funcGroup({ args, pass:{
  arrFunctions: [() => {
-  const [userName, setUserName] = useState("");
-  const [userPassword, setUserPassword] = useState("");
-  const [mensagemErro, setMensagemErro] = useState("");
-
-  const handleLogin = () => {
     if (!userName.trim()) {
       setMensagemErro("O nome de usuário precisa ser preenchido.");
       return;
@@ -179,33 +174,7 @@ borderRadius: "10px",
     // Se passou na validação
     setMensagemErro("");
     console.log("Login realizado com sucesso!");
-  };
-
-  return (
-    <View style={styles.container}>
-      <TextInput
-        placeholder="Nome de usuário"
-        style={styles.input}
-        value={userName}
-        onChangeText={setUserName}
-      />
-
-      <TextInput
-        placeholder="Senha"
-        style={styles.input}
-        value={userPassword}
-        onChangeText={setUserPassword}
-        secureTextEntry
-      />
-
-      {mensagemErro !== "" && <Text style={styles.erro}>{mensagemErro}</Text>}
-
-      <Pressable style={styles.botao} onPress={handleLogin}>
-        <Text style={styles.textoBotao}>Login</Text>
-      </Pressable>
-    </View>
-  );
-};]
+  };]
  , trigger: 'on press'
 }})],            childrenItems:[(...args:any) => <Elements.Text pass={{
           arrProps: [
