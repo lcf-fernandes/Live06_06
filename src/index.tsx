@@ -44,7 +44,8 @@
             elementsProperties:['{}'],
 
             styles:[`{
-width: "100%"
+width: "100%",
+aligntItems: "center",
 }`],
 
             functions:[()=>{}],            childrenItems:[
