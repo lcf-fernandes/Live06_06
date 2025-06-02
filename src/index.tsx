@@ -221,7 +221,7 @@ const [sc, setSc] = useState({
       setMensagemErro("");
       console.log("Login válido, pode prosseguir!");
     }
-}]
+};]
  , trigger: 'on press'
 }})],            childrenItems:[(...args:any) => <Elements.Text pass={{
           arrProps: [
