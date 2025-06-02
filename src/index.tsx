@@ -75,6 +75,8 @@ fontSize: "16px",
           stylesArray: [`{
 color: "#EEE",
 fontSize: "12px",
+borderBottomWidth: "1px",
+borderBottomColor: "#EEE",
 }`],
 
           path: [`sc.scA0.form.userName`],
@@ -127,6 +129,8 @@ fontSize: "16px",
           stylesArray: [`{
 color: "#EEE",
 fontSize: "12px",
+borderBottomWidth: "1px",
+borderBottomColor: "#EEE",
 }`],
 
           path: [`sc.scA0.form.userPassword`],
