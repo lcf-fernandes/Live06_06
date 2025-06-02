@@ -180,8 +180,8 @@ return (
     <View style={styles.container}>
       {mensagemErro !== "" && <Text style={styles.erro}>{mensagemErro}</Text>}
     </View>
-  );
-};]
+  )
+}]
  , trigger: 'on press'
 }})],            childrenItems:[(...args:any) => <Elements.Text pass={{
           arrProps: [
