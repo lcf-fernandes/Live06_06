@@ -160,29 +160,66 @@ borderRadius: "10px",
 
             functions:[async (...args) =>
  functions.funcGroup({ args, pass:{
- arrFunctions: [() => {
+ arrFunctions: [const [sc, setSc] = useState({
+    scA0: {
+      form: {
+        userName: "",
+        userPassword: "",
+      },
+    },
+  });
+
+  const [mensagemErro, setMensagemErro] = useState("");
+
+  const handleUserNameChange = (text) => {
+    setSc((prev) => ({
+      ...prev,
+      scA0: {
+        ...prev.scA0,
+        form: {
+          ...prev.scA0.form,
+          userName: text,
+        },
+      },
+    }));
+  };
+
+  const handleUserPasswordChange = (text) => {
+    setSc((prev) => ({
+      ...prev,
+      scA0: {
+        ...prev.scA0,
+        form: {
+          ...prev.scA0.form,
+          userPassword: text,
+        },
+      },
+    }));
+  };
+
   const validateLogin = () => {
     const { userName, userPassword } = sc.scA0.form;
 
-    if (!userName || userName.trim() === '') {
-      return 'Nome de usuário inválido ou vazio.';
+    if (!userName || userName.trim() === "") {
+      return "Nome de usuário inválido ou vazio.";
     }
 
-    if (!userPassword || userPassword.trim() === '') {
-      return 'Senha inválida ou vazia.';
+    if (!userPassword || userPassword.trim() === "") {
+      return "Senha inválida ou vazia.";
     }
 
-    return 'OK';
-  }
+    return "OK";
+  };
 
-  const result = validateLogin();
-  if (result !== 'OK') {
-    console.log(result);
-  } else {
-    console.log('Login válido, pode prosseguir!');
-  }
-})
-]
+  const handlePress = () => {
+    const resultado = validateLogin();
+    if (resultado !== "OK") {
+      setMensagemErro(resultado);
+      console.log(resultado);
+    } else {
+      setMensagemErro("");
+      console.log("Login válido, pode prosseguir!");
+    }]
  , trigger: 'on press'
 }})],            childrenItems:[(...args:any) => <Elements.Text pass={{
           arrProps: [
