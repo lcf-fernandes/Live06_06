@@ -160,7 +160,7 @@ borderRadius: "10px",
 
             functions:[async (...args) =>
  functions.funcGroup({ args, pass:{
- arrFunctions: [(() => {
+ arrFunctions: [() => {
   const validateLogin = () => {
     const { userName, userPassword } = sc.scA0.form;
 
@@ -181,7 +181,7 @@ borderRadius: "10px",
   } else {
     console.log('Login válido, pode prosseguir!');
   }
-})()
+})
 ]
  , trigger: 'on press'
 }})],            childrenItems:[(...args:any) => <Elements.Text pass={{
