@@ -34,6 +34,7 @@
   height: "100%",
   alignItems: "center",
   backgroundColor: "#050333",
+  padding: "20px",
 }`],
 
           screenElements:[() => {
