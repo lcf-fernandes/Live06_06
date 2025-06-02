@@ -165,7 +165,7 @@ padding: "5px",
           arrStyles: [
             `{
 color: "#EEE",
-fontSize: "20px",
+fontSize: "12px",
 }`
           ],
 
