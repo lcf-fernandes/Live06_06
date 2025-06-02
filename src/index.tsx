@@ -160,7 +160,29 @@ borderRadius: "10px",
 
             functions:[async (...args) =>
  functions.funcGroup({ args, pass:{
- arrFunctions: [()=>{}]
+ arrFunctions: [() => {
+const validateLogin = (sc) => {
+  const { userName, userPassword } = sc.scA0.form;
+
+  if (!userName || userName.trim() === '') {
+    return 'Nome de usuário inválido ou vazio.';
+  }
+
+  if (!userPassword || userPassword.trim() === '') {
+    return 'Senha inválida ou vazia.';
+  }
+
+  return 'OK';  // Se ambos os campos estiverem preenchidos corretamente.
+}
+
+const result = validateLogin(sc);
+if (result !== 'OK') {
+  console.log(result);  // Exibe o erro correspondente
+} else {
+  console.log('Login válido, pode prosseguir!');
+}
+};
+]
  , trigger: 'on press'
 }})],            childrenItems:[(...args:any) => <Elements.Text pass={{
           arrProps: [
