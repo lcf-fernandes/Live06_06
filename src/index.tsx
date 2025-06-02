@@ -174,7 +174,13 @@ borderRadius: "10px",
     // Se passou na validação
     setMensagemErro("");
     console.log("Login realizado com sucesso!");
-  }]
+  };
+
+return (
+    <View style={styles.container}>
+      {mensagemErro !== "" && <Text style={color: "red"}>{mensagemErro}</Text>}
+);
+}]
  , trigger: 'on press'
 }})],            childrenItems:[(...args:any) => <Elements.Text pass={{
           arrProps: [
