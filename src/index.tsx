@@ -45,7 +45,7 @@
             elementsProperties:['{}'],
 
             styles:[`{
-width: "100%",
+width: "300px",
 aligntItems: "center",
 justifyContent: "center",
 }`],
@@ -96,7 +96,7 @@ fontSize: "12px",
             elementsProperties:['{}'],
 
             styles:[`{
-width: "100%",
+width: "300px",
 aligntItems: "center",
 justifyContent: "center",
 }`],
