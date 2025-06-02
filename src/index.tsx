@@ -160,7 +160,8 @@ borderRadius: "10px",
 
             functions:[async (...args) =>
  functions.funcGroup({ args, pass:{
- arrFunctions: [const [sc, setSc] = useState({
+ arrFunctions: [()=> {
+const [sc, setSc] = useState({
     scA0: {
       form: {
         userName: "",
@@ -219,7 +220,8 @@ borderRadius: "10px",
     } else {
       setMensagemErro("");
       console.log("Login válido, pode prosseguir!");
-    }]
+    }
+}]
  , trigger: 'on press'
 }})],            childrenItems:[(...args:any) => <Elements.Text pass={{
           arrProps: [
