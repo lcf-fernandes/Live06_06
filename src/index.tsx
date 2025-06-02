@@ -161,66 +161,50 @@ borderRadius: "10px",
             functions:[async (...args) =>
  functions.funcGroup({ args, pass:{
  arrFunctions: [() => {
-const [sc, setSc] = useState({
-    scA0: {
-      form: {
-        userName: "",
-        userPassword: "",
-      },
-    },
-  });
-
+  const [userName, setUserName] = useState("");
+  const [userPassword, setUserPassword] = useState("");
   const [mensagemErro, setMensagemErro] = useState("");
 
-  const handleUserNameChange = (text) => {
-    setSc((prev) => ({
-      ...prev,
-      scA0: {
-        ...prev.scA0,
-        form: {
-          ...prev.scA0.form,
-          userName: text,
-        },
-      },
-    }));
-  };
-
-  const handleUserPasswordChange = (text) => {
-    setSc((prev) => ({
-      ...prev,
-      scA0: {
-        ...prev.scA0,
-        form: {
-          ...prev.scA0.form,
-          userPassword: text,
-        },
-      },
-    }));
-  };
-
-  const validateLogin = () => {
-    const { userName, userPassword } = sc.scA0.form;
-
-    if (!userName || userName.trim() === "") {
-      return "Nome de usuário inválido ou vazio.";
+  const handleLogin = () => {
+    if (!userName.trim()) {
+      setMensagemErro("O nome de usuário precisa ser preenchido.");
+      return;
     }
 
-    if (!userPassword || userPassword.trim() === "") {
-      return "Senha inválida ou vazia.";
+    if (!userPassword.trim()) {
+      setMensagemErro("A senha precisa ser preenchida.");
+      return;
     }
 
-    return "OK";
+    // Se passou na validação
+    setMensagemErro("");
+    console.log("Login realizado com sucesso!");
   };
 
-  const handlePress = () => {
-    const resultado = validateLogin();
-    if (resultado !== "OK") {
-      setMensagemErro(resultado);
-      console.log(resultado);
-    } else {
-      setMensagemErro("");
-      console.log("Login válido, pode prosseguir!");
-    }
+  return (
+    <View style={styles.container}>
+      <TextInput
+        placeholder="Nome de usuário"
+        style={styles.input}
+        value={userName}
+        onChangeText={setUserName}
+      />
+
+      <TextInput
+        placeholder="Senha"
+        style={styles.input}
+        value={userPassword}
+        onChangeText={setUserPassword}
+        secureTextEntry
+      />
+
+      {mensagemErro !== "" && <Text style={styles.erro}>{mensagemErro}</Text>}
+
+      <Pressable style={styles.botao} onPress={handleLogin}>
+        <Text style={styles.textoBotao}>Login</Text>
+      </Pressable>
+    </View>
+  );
 };]
  , trigger: 'on press'
 }})],            childrenItems:[(...args:any) => <Elements.Text pass={{
