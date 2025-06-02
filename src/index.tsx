@@ -155,6 +155,7 @@ borderBottomColor: "#EEE",
 borderWidth: "1px",
 borderColor: "#EEE",
 padding: "5px",
+borderRadius: "10px",
 }`],
 
             functions:[()=>{}],            childrenItems:[(...args:any) => <Elements.Text pass={{
