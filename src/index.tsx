@@ -160,28 +160,7 @@ borderRadius: "10px",
 
             functions:[async (...args) =>
  functions.funcGroup({ args, pass:{
- arrFunctions: [() => {
-    if (!userName.trim()) {
-      setMensagemErro("O nome de usuário precisa ser preenchido.");
-      return;
-    }
-
-    if (!userPassword.trim()) {
-      setMensagemErro("A senha precisa ser preenchida.");
-      return;
-    }
-
-    // Se passou na validação
-    setMensagemErro("");
-    console.log("Login realizado com sucesso!");
-  }
-
-return (
-    <View style={styles.container}>
-      {mensagemErro !== "" && <Text style={styles.erro}>{mensagemErro}</Text>}
-    </View>
-  );
-}]
+ arrFunctions: [()=>{}]
  , trigger: 'on press'
 }})],            childrenItems:[(...args:any) => <Elements.Text pass={{
           arrProps: [
