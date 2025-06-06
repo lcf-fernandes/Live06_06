@@ -173,7 +173,57 @@ borderRadius: "10px",
 
             functions:[async (...args) =>
  functions.funcGroup({ args, pass:{
- arrFunctions: [undefined]
+ arrFunctions: [() => {
+  const [userName, setUserName] = React.useState("");
+  const [userPassword, setUserPassword] = React.useState("");
+  const [mensagemErro, setMensagemErro] = React.useState("");
+
+  const handleLogin = () => {
+    if (!userName.trim()) {
+      setMensagemErro("O nome de usuário precisa ser preenchido.");
+      return;
+    }
+
+    if (!userPassword.trim()) {
+      setMensagemErro("A senha precisa ser preenchida.");
+      return;
+    }
+
+    // Se passou na validação
+    setMensagemErro("");
+    console.log("Login realizado com sucesso!");
+   // setVar aqui
+  };
+
+const styles = {
+input: {},
+};
+
+  return (
+    <RN.View style={styles.container}>
+      <RN.TextInput
+        placeholder="Nome de usuário"
+        style={styles.input}
+        value={userName}
+        onChangeText={setUserName}
+      />
+
+      <RN.TextInput
+        placeholder="Senha"
+        style={styles.input}
+        value={userPassword}
+        onChangeText={setUserPassword}
+        secureTextEntry
+      />
+
+      {mensagemErro !== "" && <RN.Text style={styles.erro}>{mensagemErro}</RN.Text>}
+
+      <RN.Pressable style={styles.botao} onPress={handleLogin}>
+        <RN.Text style={styles.textoBotao}>Login</RN.Text>
+      </RN.Pressable>
+    </RN.View>
+  );
+}]
  , trigger: 'on press'
 }})],            childrenItems:[(...args:any) => <Elements.Text pass={{
           arrProps: [
