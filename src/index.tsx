@@ -50,153 +50,94 @@
   justifyContent: "center",
 }`],
 
-            functions:[()=>{}],            childrenItems:[
-        
+            functions:[()=>{}],            childrenItems:[() => {
+  const [userName, setUserName] = React.useState("");
+  const [userPassword, setUserPassword] = React.useState("");
+  const [mensagemErro, setMensagemErro] = React.useState("");
+  const handleLogin = () => {
+    if (!userName.trim()) {
+      setMensagemErro("O nome de usuário precisa ser preenchido.");
+      return;
+    }
+    if (!userPassword.trim()) {
+      setMensagemErro("A senha precisa ser preenchida.");
+      return;
+    }
 
-          (...args:any) => <Elements.DynView pass={{
-            elementsProperties:['{}'],
+    setMensagemErro("");
+    console.log("Login realizado com sucesso!");
+  };
 
-            styles:[`{
-aligntItems: "center",
-justifyContent: "center",
-padding: "5px",
-}`],
+  return (
+    <RN.View
+      style={{
+        padding: 20,
+        alignItems: "stretch",
+        justifyContent: "center",
+      }}
+    >
+      <RN.TextInput
+        placeholder="Nome de usuário"
+        style={{
+          borderWidth: 1,
+          borderColor: "#ccc",
+          paddingVertical: 10,
+          paddingHorizontal: 15,
+          borderRadius: 8,
+          marginBottom: 10,
+        }}
+        value={userName}
+        onChangeText={setUserName}
+      />
 
-            functions:[()=>{}],            childrenItems:[
-        (...args:any) => <Elements.Text pass={{
-          arrProps: [
-            '{}'
-          ],
+      <RN.TextInput
+        placeholder="Senha"
+        style={{
+          borderWidth: 1,
+          borderColor: "#ccc",
+          paddingVertical: 10,
+          paddingHorizontal: 15,
+          borderRadius: 8,
+          marginBottom: 10,
+        }}
+        value={userPassword}
+        onChangeText={setUserPassword}
+        secureTextEntry
+      />
 
-          arrStyles: [
-            `{
-color: "#EEE",
-fontSize: "16px",
-}`
-          ],
+      {mensagemErro !== "" && (
+        <RN.Text
+          style={{
+            color: "red",
+            marginBottom: 10,
+          }}
+        >
+          {mensagemErro}
+        </RN.Text>
+      )}
 
-          children: [
-            `Nome de Usuário`
-          ],
-
-          args,
-
-        }}/>, (...args:any) => <Elements.IptTxtEdit pass={{
-          propsArray: [{}],
-
-          stylesArray: [`{
-color: "#EEE",
-fontSize: "12px",
-borderBottomWidth: "1px",
-borderBottomColor: "#EEE",
-}`],
-
-          path: [`sc.scA0.form.userName`],
-
-          funcsArray: [async (...args) =>
-        functions.setVar({ args, pass:{
-          keyPath: [`sc.scA0.form.userName`],
-          value: [`$arg_callback`]
-        }})],
-
-          args,
-        }}/>],
-
-            args,
-          }}/>
-        , 
-        
-
-          (...args:any) => <Elements.DynView pass={{
-            elementsProperties:['{}'],
-
-            styles:[`{
-aligntItems: "center",
-justifyContent: "center",
-padding: "5px",
-}`],
-
-            functions:[()=>{}],            childrenItems:[
-        (...args:any) => <Elements.Text pass={{
-          arrProps: [
-            '{}'
-          ],
-
-          arrStyles: [
-            `{
-color: "#EEE",
-fontSize: "16px",
-}`
-          ],
-
-          children: [
-            `Senha`
-          ],
-
-          args,
-
-        }}/>, (...args:any) => <Elements.IptTxtEdit pass={{
-          propsArray: [{}],
-
-          stylesArray: [`{
-color: "#EEE",
-fontSize: "12px",
-borderBottomWidth: "1px",
-borderBottomColor: "#EEE",
-}`],
-
-          path: [`sc.scA0.form.userPassword`],
-
-          funcsArray: [async (...args) =>
-        functions.setVar({ args, pass:{
-          keyPath: [`sc.scA0.form.userPassword`],
-          value: [`$arg_callback`]
-        }})],
-
-          args,
-        }}/>],
-
-            args,
-          }}/>
-        , 
-
-          (...args:any) => <Elements.DynView pass={{
-            elementsProperties:['{}'],
-
-            styles:[`{
-borderWidth: "1px",
-borderColor: "#EEE",
-padding: "5px",
-borderRadius: "10px",
-}`],
-
-            functions:[async (...args) =>
- functions.funcGroup({ args, pass:{
- arrFunctions: [undefined]
- , trigger: 'on press'
-}})],            childrenItems:[(...args:any) => <Elements.Text pass={{
-          arrProps: [
-            '{}'
-          ],
-
-          arrStyles: [
-            `{
-color: "#EEE",
-fontSize: "12px",
-}`
-          ],
-
-          children: [
-            `ENTRAR`
-          ],
-
-          args,
-
-        }}/>],
-
-            args,
-          }}/>
-        ],
+      <RN.Pressable
+        style={{
+          backgroundColor: "#007BFF",
+          paddingVertical: 12,
+          paddingHorizontal: 24,
+          borderRadius: 8,
+          alignItems: "center",
+        }}
+        onPress={handleLogin}
+      >
+        <RN.Text
+          style={{
+            color: "#FFFFFF",
+            fontSize: 16,
+          }}
+        >
+          Login
+        </RN.Text>
+      </RN.Pressable>
+    </RN.View>
+  );
+}],
 
             args,
           }}/>
