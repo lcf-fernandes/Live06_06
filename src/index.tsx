@@ -176,19 +176,16 @@ borderRadius: "10px",
   const [userName, setUserName] = React.useState("");
   const [userPassword, setUserPassword] = React.useState("");
   const [mensagemErro, setMensagemErro] = React.useState("");
-
   const handleLogin = () => {
     if (!userName.trim()) {
       setMensagemErro("O nome de usuário precisa ser preenchido.");
       return;
     }
-
     if (!userPassword.trim()) {
       setMensagemErro("A senha precisa ser preenchida.");
       return;
     }
 
-    // Se passou na validação
     setMensagemErro("");
     console.log("Login realizado com sucesso!");
   };
