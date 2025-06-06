@@ -39,6 +39,7 @@
 }`],
 
           screenElements:[
+        
 
           (...args:any) => <Elements.DynView pass={{
             elementsProperties:['{}'],
@@ -197,6 +198,40 @@ fontSize: "12px",
             args,
           }}/>
         ],
+
+            args,
+          }}/>
+        , 
+
+          (...args:any) => <Elements.DynView pass={{
+            elementsProperties:['{}'],
+
+            styles:[`{
+  width: "100%",
+  height: "100%",
+  alignItems: "center",
+  justifyContent: "center",
+}`],
+
+            functions:[()=>{}],            childrenItems:[(...args:any) => <Elements.Text pass={{
+          arrProps: [
+            '{}'
+          ],
+
+          arrStyles: [
+            `{
+color: "#EEE",
+fontSize: "16px",
+}`
+          ],
+
+          children: [
+            `Você logou!!!`
+          ],
+
+          args,
+
+        }}/>],
 
             args,
           }}/>
